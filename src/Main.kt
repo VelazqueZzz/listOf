@@ -1,15 +1,12 @@
 
 fun main() {
-    val ingredients = mutableListOf("Капуста", "Картошка", "Свекла")
-    println("В рецепте есть базовые ингредиенты: ${ingredients.joinToString (", ")}")
-    println("Желаете добавить еще?")
-    val new = readln()
-    if (new.equals("да", ignoreCase=true)) {
-        println("Какой ингредиент вы хотите добавить?")
-        val newIngredients = readln()
-        ingredients.add (newIngredients)
-    }else return
+    val perPortion = arrayOf(2, 50, 15)
+    print("Введите количество порций: ")
+    val portions = readln().toInt()
 
-println("Теперь в рецепте есть следующие ингредиенты: ${ingredients.joinToString (", ")}")
+    val eggs = perPortion[0] * portions
+    val milk = perPortion[1] * portions
+    val butter = perPortion[2] * portions
 
+    println("На $portions порций вам понадобится: Яиц – $eggs шт., молока – $milk мл, сливочного масла – $butter гр.")
 }
