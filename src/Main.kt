@@ -1,12 +1,10 @@
-
 fun main() {
-    val perPortion = arrayOf(2, 50, 15)
+    val perPortion = listOf(2, 50, 15)
+
     print("Введите количество порций: ")
     val portions = readln().toInt()
 
-    val eggs = perPortion[0] * portions
-    val milk = perPortion[1] * portions
-    val butter = perPortion[2] * portions
+    val total = perPortion.map { it * portions }
 
-    println("На $portions порций вам понадобится: Яиц – $eggs шт., молока – $milk мл, сливочного масла – $butter гр.")
+    println("На $portions порций вам понадобится: Яиц – ${total[0]} шт., молока – ${total[1]} мл, сливочного масла – ${total[2]} гр.")
 }
